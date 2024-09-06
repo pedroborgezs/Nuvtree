@@ -1,0 +1,26 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/navbar.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/global.css' %}">
+    <title>Nuvtree</title>
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="/">
+                <img class="nav-logo" src="{% static 'images/nuvtree.png' %}" alt="Nuvtec logo">
+            </a>
+            <ul class="nav-list">
+                <li><a class="non-mobile" href="https://github.com/yzee4/NuvTec">Github</a></li>
+                <li><a class="non-mobile" href="About/">About</a></li>
+                <li><a href="/sign-in/">Sign in</a></li>
+                <li><a href="/sign-up/">Sign up</a></li>
+            </ul>
+        </nav>
+    </header>
+{% block content %}
+{% endblock %}

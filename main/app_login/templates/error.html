@@ -1,0 +1,18 @@
+{% extends 'global.html' %}
+{% load static %}
+{% block content %}
+<head>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/auth.css' %}">
+    <script src="{% static 'js/validate_in.js' %}" defer></script>
+</head>
+<div class="container-wrapper">
+    <div>
+        <!-- <img class="logo" src="{% static 'images/nuvtec-logo.png' %}" alt="Nuvtec-logo"> -->
+        <h2>Form error!</h2>
+        <p class="text-subtitle">You won't find anything here...</p>
+        <p>We understand your desire to explore, but you won't find anything 
+        exploring the pages without following the correct steps, come back!</p>
+        <a class="go-to" href="/">Back to menu</a>
+    </div>
+</div>
+{% endblock %}

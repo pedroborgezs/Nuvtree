@@ -1,0 +1,30 @@
+{% extends 'global.html' %}
+{% load static %}
+{% block content %}
+<head>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/auth.css' %}">
+    <script src="{% static 'js/validate_up.js' %}" defer></script>
+</head>
+<div class="container-wrapper">
+    <div>
+        <h2>Welcome!</h2>
+        <p class="text-subtitle">Fill all inputs to create your account...</p>
+        <form method="POST" onsubmit="return validateForm(event)">
+            {% csrf_token %}
+            <p>Change your username*</p>
+            <input id="username" type="text" name="username" placeholder="Username" autocomplete="off">
+            <p>Enter your email*</p>
+            <input id="email-address" type="text" name="email-address" placeholder="Email address" autocomplete="off">
+            <p>Change your password*</p>
+            <input id="password" type="password" name="password" placeholder="Password" autocomplete="off">
+            <p>Confirm your password*</p>
+            <input id="confirm-password" type="password" name="confirm-password" placeholder="Confirm password" autocomplete="off">
+            <button type="submit">Create Account</button>
+            {% if error_message %}
+            <p class="error-message">{{ error_message }}</p>
+            {% endif %}
+            <a href="/sign-in">Already have an account?</a>
+        </form>
+    </div>
+</div>
+{% endblock %}

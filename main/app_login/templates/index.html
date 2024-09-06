@@ -1,0 +1,17 @@
+{% extends 'global.html' %}
+{% load static %}
+{% block content %}
+<head>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/index.css' %}">
+</head>
+<div class="container-wrapper">
+    <div>
+        <img class="logo" src="{% static 'images/nuvtree.png' %}" alt="Nuvtec-logo">
+        <p class="text-subtitle">Cloud System For The Micro Enterprises</p>
+        <p>Nuvtec is a good cloud system for micro or macro companies, developed by students 
+        Pedro Filipe, Alex Júnior, Bruno Lima, Breno, Gabriel Moraes, from Etec Idio Zuchi in 
+        Bebedouro-SP, Brazil, for the final work of the Systems Development course.  
+        <br><br>The system has created with Python (using Django lib), JavaScript, HTML and CSS</p>
+    </div>
+</div>
+{% endblock %}

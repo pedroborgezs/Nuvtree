@@ -1,0 +1,107 @@
+/* Container de login */
+div[class="container-wrapper"] {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: auto;
+    width: auto;
+}
+
+div div {
+    background-color: #000913c0;
+    width: 50vh;
+    padding: 3vh;
+    border-radius: 30px;
+    text-align: center;
+}
+
+.logo {
+    padding: 5px;
+    width: 40px;
+    height: auto;
+}
+
+h2 {
+    padding: 2vh 0 0 0;
+    margin: 0;
+    color: #fff;
+    text-align: center;
+    font-size: 3vh;
+}
+
+input {
+    outline: none;
+    color: #fff;
+    font-size: 2vh;
+    font-family: monospace;
+    background-color: #000913;
+    width: 100%;
+    padding: 1vh;
+    margin-bottom: 2vh;
+    border: 1px solid #000913;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+input:focus {
+    border: 1px solid #001931;
+    border-color: #007BFF;
+}
+
+input::placeholder {
+    color: #9999992f;
+}
+
+button {
+    margin: 2vh;
+    font-family: monospace;
+    width: 50%;
+    padding: 2vh;
+    background-color: #007BFF;
+    color: #fff;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 2vh; 
+}
+
+button:hover {
+    background-color: #004ea1;
+}
+
+p {
+    padding: 0 0 1vh; 
+    margin: 0;
+    font-size: 2vh; 
+    text-align: left;
+    color: #999999;
+}
+
+form a,
+a[class="go-to"] {
+    padding: 2vh 0 0 0; 
+    display: flex;
+    justify-content: right;
+    font-size: 2vh;
+    color: #007BFF;
+    text-decoration: none;
+}
+
+p[class="text-subtitle"] {
+    padding: 1vh 0 2vh; 
+    margin: 0;
+    text-align: center;
+    font-size: 2vh; 
+    color: #007BFF;
+}
+
+p[class="error-message"] {
+    color: red;
+    text-align: center;
+}
+
+p[class="success-message"] {
+    color: green;
+    text-align: center;
+}
+
