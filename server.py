@@ -1,15 +1,15 @@
 # Import Libs
 import subprocess as sb
 from modules import settings_conf
-import colorama
-from colorama import Fore
-colorama.init(autoreset=True)
 
 # Start development server
+print("provided by: nuvtree")
+print("\nmodules: load settings_conf.py")
 server_ip, server_port, allowed_ip = settings_conf.init()
 
-print(Fore.YELLOW + "\n+-- Migrate Server -------------------------+")
+print("\ncmd: makemigrations")
+sb.run('python main/manage.py makemigrations', shell=True)
+print("\ncmd: migrate")
 sb.run('python main/manage.py migrate', shell=True)
-
-print(Fore.GREEN + "\n+-- Hosting Server -------------------------+")
+print("\ncmd: runserver")
 sb.run(f'python main/manage.py runserver {server_ip}:{server_port}', shell=True)

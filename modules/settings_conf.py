@@ -1,8 +1,5 @@
 # Importando libs
 from pathlib import Path
-import colorama
-from colorama import Fore, Style
-colorama.init(autoreset=True)
 import socket
 import sys
 import re
@@ -16,14 +13,16 @@ def read_settings_conf():
     # Open config file
     with open(settings_file , "r") as f:
         allowed_ip = []
-        server_ip = None
-        machine = False
+        server_ip_machine = 'False'
 
         for line in f:
+            # Get server ip machine value
+            if line.startswith("server_ip_machine="):
+                server_ip_machine = line.split('=')[1].strip()
+
             # Get server ip
             if line.startswith("server_ip="):
                 server_ip = line.split('=')[1].strip()
-                allowed_ip.append(server_ip)
 
             # Get server port
             if line.startswith("server_port="):
@@ -49,23 +48,28 @@ def read_settings_conf():
             if line.startswith("email_password="):
                 email_password = line.split('=')[1].strip()
 
-        if not server_ip:
-            # Trying get machine ip
-            try:
-                hostname = socket.gethostname()
-                server_ip = socket.gethostbyname(hostname)
-                machine = True
-            except Exception as e:
-                print(f"Error: {e}")
-                sys.exit(0)
-
-        allowed_ip.append(server_ip)
-
-        if machine:
-            machine = server_ip
+        if server_ip_machine == 'True':
+            hostname = socket.gethostname()
+            server_ip_machine = socket.gethostbyname(hostname)
+            allowed_ip.append(server_ip_machine)
             server_ip = '0.0.0.0'
-    
-    return server_ip, server_port, allowed_ip, email_smtp, email_port, email_address, email_password, machine
+
+            with open(settings_file , "r") as f:
+                lines = f.readlines()
+
+            # Write on settings_file
+            with open(settings_file, 'w') as file:
+                for line in lines:
+                    if line.startswith("server_ip="):
+                        line = "server_ip=" + server_ip_machine + '\n'
+                    file.write(line)
+        else:
+            if not server_ip:
+                print("error: server_ip has not set. define server_ip_machine on True to use ip machine to run server.")
+                sys.exit(0)
+            
+
+    return server_ip, server_port, allowed_ip, email_smtp, email_port, email_address, email_password, server_ip_machine
 
 # Write settings on Django settings file
 def write_settings_file(allowed_ip, email_smtp, email_port, email_address, email_password):
@@ -117,22 +121,21 @@ def write_settings_file(allowed_ip, email_smtp, email_port, email_address, email
 def init():
         
     # Read config file
-    server_ip, server_port, allowed_ip, email_smtp, email_port, email_address, email_password, machine = read_settings_conf()
+    server_ip, server_port, allowed_ip, email_smtp, email_port, email_address, email_password, server_ip_machine = read_settings_conf()
 
     # Write config changes on Django settings.py
     write_settings_file(allowed_ip, email_smtp, email_port, email_address, email_password)
 
-    print(f"{Fore.LIGHTBLUE_EX}+-- Basic Server Config To Host ------------+")
-    if machine:
-        print(f"{Fore.LIGHTBLUE_EX}server_ip: " + Style.RESET_ALL + machine)
+    if server_ip_machine == 'True':
+        print(f"server_ip: " + server_ip_machine)
     else:
-        print(f"{Fore.LIGHTBLUE_EX}server_ip: " + Style.RESET_ALL + server_ip)
-    print(f"{Fore.LIGHTBLUE_EX}server_port: " + Style.RESET_ALL + server_port)
+        print(f"server_ip: " + server_ip)
+    print(f"server_port: " + server_port)
     for i in allowed_ip:
-        print(f"{Fore.LIGHTBLUE_EX}allowed_ip: " + Style.RESET_ALL + i)
-    print(f"{Fore.LIGHTBLUE_EX}email_smtp: " + Style.RESET_ALL + email_smtp)
-    print(f"{Fore.LIGHTBLUE_EX}email_port: " + Style.RESET_ALL + email_port)
-    print(f"{Fore.LIGHTBLUE_EX}email: " + Style.RESET_ALL + email_address)
-    print(f"{Fore.LIGHTBLUE_EX}email_password: " + Style.RESET_ALL + email_password)
+        print(f"allowed_ip: " + i)
+    print(f"email_smtp: " + email_smtp)
+    print(f"email_port: " + email_port)
+    print(f"email: " + email_address)
+    print(f"email_password: " + email_password)
 
     return server_ip, server_port, allowed_ip
