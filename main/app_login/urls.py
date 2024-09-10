@@ -15,8 +15,8 @@ urlpatterns = [
     path('sign-up/', views.sign_up, name='sign-up'),
 
     # URL do Send-Verification
-    path('verify-send/', views.verify_send, name='verify-send'),
-    path('verify-email/', views.verify_email, name='verify_email'),
+    path('verify/email/', views.verify_send, name='email'),
+    path('verify/success/', views.verify_email, name='success'),
 
     # URL página de Error
     path('error/', views.error, name='error'),

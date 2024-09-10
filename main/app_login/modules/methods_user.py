@@ -1,5 +1,6 @@
 # Importa libs
 import re
+from pathlib import Path
 from ..models import User
 
 # Libs do django pra alternância entre as páginas
@@ -109,10 +110,18 @@ def user_send_email(new_user):
     token = urlsafe_base64_encode(force_bytes(new_user.pk))
 
     # Cria a URL que será usada para o usurário validar o e-mail
-    verification_url = reverse('verify_email') + '?' + urlencode({'token': token})
+    verification_url = reverse('success') + '?' + urlencode({'token': token})
+
+    # Django settings file
+    parent = Path(__file__).resolve().parent.parent.parent.parent
+    settings_file = parent / "settings.conf"
 
     # Endereço IP do servidor
-    local_ip = '192.168.1.11' # Por enquanto é da minha máquina 
+    with open(settings_file, 'r') as f:
+        for line in f:
+            if line.startswith("server_ip="):
+                server_ip = line.split('=')[1].strip()
+    local_ip = server_ip
 
     # URL inteira com o endereço do servidor
     # Por enquanto na mensagem só irá aparecer o verification_url
@@ -123,7 +132,7 @@ def user_send_email(new_user):
     mail_subject = 'Verify Your Account!'
 
     # Mensagem
-    message = render_to_string('verify-message.html', {
+    message = render_to_string('verify/message.html', {
         'user': new_user,
         'verification_url': verification_url,
     })
@@ -145,7 +154,7 @@ def user_send_email(new_user):
 # Recebe a confimação do email
 def user_verify_email(request):
     # Coleta o token do link
-    token = request.GET.get('token')
+    token = request.GET.get('token')    
 
     if not token:
         return redirect('/error')
@@ -165,10 +174,11 @@ def user_verify_email(request):
             new_user.save()
 
             # Redireciona para a página de sucesso
-            return render(request, 'verify-success.html')
+            return render(request, 'verify/success.html')
+        else:
+            return render(request, 'verify/expired.html')
 
     # Se caso tudo der errado, aparece isso    
-    except (TypeError, ValueError, OverflowError, User.DoesNotExist):
-        return render(request, 'expired.html')
-    return HttpResponse('An unexpected error occurred.')
+    except Exception:
+        return render(request, 'verify/expired.html')
     

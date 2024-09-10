@@ -1,19 +1,10 @@
 # Arquivo que direciona para o HTML
 
-# Libs externas
-import re
-import bcrypt # type: ignore
-
 # Modules
 from .modules import methods_user
 
-# Models
-from .models import User
-
 # Importa libs
 from django.shortcuts import render, redirect
-from django.utils.http import urlsafe_base64_decode
-from django.http import HttpResponse
 
 # Index HTML
 def home(request):
@@ -36,9 +27,6 @@ def sign_in(request):
 
     return render(request, 'sign-in.html')
 
-
-
-
 # Página de criar conta
 def sign_up(request):
     if request.method == "POST":
@@ -53,7 +41,7 @@ def sign_up(request):
         methods_user.user_send_email(new_user)
 
         request.session['verify_send_access'] = True
-        return redirect('/verify-send')
+        return redirect('/verify/email')
 
     return render(request, 'sign-up.html')
 
@@ -61,7 +49,7 @@ def sign_up(request):
 def verify_send(request):
     if request.session.get('verify_send_access'):
         del request.session['verify_send_access']
-        return render(request, 'verify-send.html')
+        return render(request, 'verify/email.html')
     else:
         return redirect('/error')
 

@@ -13,6 +13,7 @@ https://docs.djangoproject.com/en/5.1/ref/settings/
 """
 
 from pathlib import Path
+import os
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -28,7 +29,7 @@ SECRET_KEY = 'django-insecure-8$tn9zz3^3l6zfy-fp*ugcq_0&o+f57j2i8pgf%o13et)nd$p2
 DEBUG = True
 
 # ALLOWED HOSTS
-ALLOWED_HOSTS = ["localhost", "127.0.0.1", "10.0.0.100"]
+ALLOWED_HOSTS = ["localhost", "127.0.0.1", "192.168.137.92"]
 
 # Application definition
 
@@ -56,7 +57,7 @@ ROOT_URLCONF = 'main.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [os.path.join(BASE_DIR, 'templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -138,5 +139,5 @@ EMAIL_HOST = 'smtp.office365.com'
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
 EMAIL_HOST_USER = 'nuvtree@outlook.com'
-EMAIL_HOST_PASSWORD = 'S1ea021274#'         
+EMAIL_HOST_PASSWORD = 's2MBEerhPM1GVcOTRtXeSR8xKz4TH0Ff'         
 DEFAULT_FROM_EMAIL = 'nuvtree@outlook.com'

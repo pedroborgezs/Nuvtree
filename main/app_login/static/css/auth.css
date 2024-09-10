@@ -15,10 +15,10 @@ div div {
     text-align: center;
 }
 
-.logo {
-    padding: 5px;
-    width: 40px;
-    height: auto;
+.icon {
+    margin: 0;
+    padding: 0;
+    width: 30vh;
 }
 
 h2 {
