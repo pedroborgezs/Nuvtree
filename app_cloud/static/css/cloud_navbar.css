@@ -1,0 +1,39 @@
+body {
+    margin: 0;
+}
+
+.toolbar {
+    width: 10vh;
+    height: 100vh;
+    position: fixed;
+    left: 0;
+    top: 0;
+    background-color: #000c1c;
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.toolbar img[class="nav-logo"] {
+    padding-bottom: 30px;
+    width: 60px;
+    height: auto;
+}
+
+.toolbar a {
+    display: block;
+    color: white;
+    text-decoration: none;
+}
+
+.toolbar-icon {
+    width: 40px;
+    padding: 5px;
+    transition: padding 0.2s ease;
+}
+
+.toolbar-icon:hover {
+    padding-left: 20px;
+}
+

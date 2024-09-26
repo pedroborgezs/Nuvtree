@@ -1,0 +1,30 @@
+/* Adicionando fontes */
+@font-face {
+    font-family: 'moderna';
+    src: url("{% static 'fonts/moderna.ttf'%}") format('ttf');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* Configuração da página */
+body {
+    font-family: monospace;
+    font-size: 16px;
+    background-color: #030813;
+    background-size: cover;
+    backdrop-filter: brightness(10%);
+    width: auto;
+    height: 100%;
+}
+
+input,
+textarea,
+button,
+select,
+a {
+    -webkit-tap-highlight-color: transparent;
+}
+
+body {
+    overflow: hidden;
+}

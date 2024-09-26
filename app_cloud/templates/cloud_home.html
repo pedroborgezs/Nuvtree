@@ -1,0 +1,34 @@
+{% extends 'cloud_index.html' %}
+{% load static %}
+
+{% block content %}
+<head>
+</head>
+<div class="content">
+    <p class="width"></p>
+    <div class="content-header">
+        <div class="header">
+            <h1>This is your home {{ username }}!</h1>
+            <p class="block">Here you can see your folders and other miscellaneous things</p>
+        </div>
+    </div>
+
+    
+    <div class="content-buttons">
+        <div class="buttons">
+            <a href="#home">
+                <img class="icon-menu" src="{% static 'images/icon-home.png' %}" alt="icon-home">
+            </a>
+            <a href="#home">
+                <img class="icon-menu" src="{% static 'images/icon-folder.png' %}" alt="icon-home">
+            </a>
+            <a href="#home">
+                <img class="icon-menu" src="{% static 'images/icon-folder-public.png' %}" alt="icon-home">
+            </a>
+            <a href="#home">
+                <img class="icon-menu" src="{% static 'images/icon-config.png' %}" alt="icon-home">
+            </a>
+        </div> 
+    </div>
+</div>
+{% endblock %}

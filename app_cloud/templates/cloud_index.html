@@ -1,0 +1,34 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/cloud_global.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/cloud_navbar.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/cloud_content.css' %}">
+    <title>Nuvtree</title>
+</head>
+<body>
+    <div class="container">
+        <div class="toolbar">
+            <img class="nav-logo" src="{% static 'images/nuvtree.png' %}" alt="Nuvtec logo">
+            <a href="#home">
+                <img class="toolbar-icon" src="{% static 'images/icon-home.png' %}" alt="icon-home">
+            </a>
+            <a href="#sobre">
+                <img class="toolbar-icon" src="{% static 'images/icon-folder.png' %}" alt="icon-home">
+            </a>
+            <a href="#servicos">
+                <img class="toolbar-icon" src="{% static 'images/icon-folder-public.png' %}" alt="icon-home">
+            </a>
+            <a href="#contato">
+                <img class="toolbar-icon" src="{% static 'images/icon-config.png' %}" alt="icon-home">
+            </a>
+        </div>
+        {% block content %}
+        <!-- Este bloco será substituído pelos templates que estendem este -->
+        {% endblock %}
+    </div>
+</body>
+</html>

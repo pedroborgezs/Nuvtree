@@ -1,0 +1,42 @@
+/* Adicionando fontes */
+@font-face {
+    font-family: 'moderna';
+    src: url("{% static 'fonts/moderna.ttf'%}") format('ttf');
+    font-weight: normal;
+    font-style: normal;
+}
+
+div[class="container-wrapper"] {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 60vh;
+    width: auto;
+}
+
+div div {
+    width: 150vh;
+    padding: 3vh;
+    border-radius: 30px;
+    text-align: center;
+}
+
+.logo {
+    padding: 5px;
+    width: 30vh;
+    height: auto;
+}
+
+p[class="text-subtitle"] {
+    font-family: monospace;
+    text-align: center;
+    font-size: 3vh;
+    color: #007BFF;
+}
+
+p {
+    font-family: monospace;
+    text-align: justify;
+    font-size: 2vh;
+    color: white;
+}

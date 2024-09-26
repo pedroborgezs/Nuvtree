@@ -1,0 +1,18 @@
+{% extends 'global.html' %}
+{% load static %}
+{% block content %}
+<head>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/auth.css' %}">
+    <script src="{% static 'js/validate_in.js' %}" defer></script>
+</head>
+<div class="container-wrapper">
+    <div>
+        <!-- <img class="logo" src="{% static 'images/nuvtec-logo.png' %}" alt="Nuvtec-logo"> -->
+        <h2>Verification link has expired!</h2>
+        <p class="text-subtitle">Time may be up....</p>
+        <p>The 10 minutes verification time may be over or your account is already
+        registered and this link has become invalid.</p>
+        <a class="go-to" href="/">Back to menu</a>
+    </div>
+</div>
+{% endblock %}

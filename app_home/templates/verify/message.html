@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        body {
+            font-family: monospace;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            text-align: center;
+            max-width: 600px;
+            margin: auto;
+            background: #001120;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        .text-presentation {
+            font-family: monospace;
+            color: #ffffff;
+        }
+        .text-subtitle {
+            font-family: monospace;
+            color: #007BFF;
+        }
+        .text-content {
+            font-family: monospace;
+            color: #ffffff;
+        }
+        .text-final {
+            font-family: monospace;
+            text-align: left;
+            color: #b1d7ff9f;
+        }
+        .link-verify {
+            color: #ffffff;
+            font-size: 30px;
+            display: inline-block;
+            padding: 10px 20px;
+            margin: 50px 0;
+            background: #007BFF;
+            text-decoration: none;
+            border-radius: 10px;
+        }
+        .logo {
+            padding: 5px;
+            width: 200px;
+            height: auto;
+        }
+    </style>
+</head>
+<body>  
+    <div class="container">
+        <img class="logo" src="https://github.com/pedroborgezs/Nuvtree/blob/main/website-docs/nuvtree.png?raw=true" alt="Nuvtree logo">
+        <p class="text-presentation"><br>Hey! {{ user.username }},</p>
+        <p class="text-subtitle">Clcik in this link for verify your email!</p>
+        <p class="text-content">There's little left to complete your account registration and activate it, just click the button below to verify your email, so you can use Nuvtree's services.</p>
+        <a style="font-family: monospace; color: #ffffff; font-size: 30px; display: inline-block; padding: 10px 20px; margin: 50px 0; background: #007BFF; text-decoration: none; border-radius: 10px;" href="{{ verification_url }}">Click Here!</a>
+        <p class="text-content">If your not registered in Nuvtree, please ignore this mail</p>
+        <p class="text-final"><br><br><br><br><br><br><br><br>Nuvtree - v1.0.0<br>
+        Coded by Pedro Filipe<br>
+        Code date 05/09/2024</p>
+    </div>
+</body>
+</html>

@@ -1,0 +1,100 @@
+p,
+h1 {
+    padding: 0;
+    margin: 0;
+}
+
+.width {
+    /* background-color: orangered; */
+    width: 1250px;
+    height: 30px;
+}
+
+.container {
+    background-color: #030813;
+    display: flex;
+    margin-left: 10vh;
+}
+
+.content {
+    margin-left: 7%;
+    margin-right: 5%;
+    justify-content: center;
+    /* background-color: yellow; */
+}
+
+.content-header {
+    justify-content: center;
+    /* background-color: aqua; */
+    display: flex;
+    width: 100%;
+}
+
+.content .header {
+    justify-content: center;
+    /* background-color: purple; */
+    justify-content: center;
+}
+
+.content .header h1 {
+    text-align: center;
+    /* background-color: green; */
+    color: #ffffff;
+}
+
+.content .header p[class="block"] {
+    color: white;
+    /* background-color: red; */
+}
+
+.content .description {
+    font-size: 10px;
+    text-align: justify;
+    color: white;
+}
+
+.content-buttons {
+    padding-top: 50px;
+    display: flex;
+    justify-content: center;
+    /* background-color: pink; */
+}
+
+.buttons {
+    /* background-color: violet; */
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 0px;
+}
+
+/* .buttons {
+    background-color: violet;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 30px; 
+} */
+
+.buttons a {
+    padding: 5px;
+    padding-right: 7px;
+    padding-left: 7px;
+    margin: 0;
+    text-align: center;
+    /* border: solid 10px #007bff; */
+    border-radius: 50px;
+    text-decoration: none;
+}
+
+.icon-menu {
+    padding: 30px;
+    margin: 0;
+    background-color: #007bff09;
+    border-radius: 30px;
+    width:  150px;
+    transition: background-color 0.3s ease-in-out;
+}
+
+.icon-menu:hover {
+    background-color: #007bff14;
+}
