@@ -12,7 +12,7 @@ body {
     font-size: 16px;
     background: url("/static/images/background.jpg") no-repeat center center; /* Adicionado espaço entre 'no-repeat' e 'center center' */
     background-size: cover;
-    backdrop-filter: brightness(10%);
+    backdrop-filter: brightness(5%);
     width: auto;
     height: 100vh;
 }

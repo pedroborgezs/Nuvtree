@@ -1,7 +1,8 @@
 # Importa libs
-import re
+import re, time
 from pathlib import Path
 from ..models import User
+from django.utils import timezone
 
 # Libs do django pra alternância entre as páginas
 from django.shortcuts import render, redirect
@@ -48,10 +49,11 @@ def user_check(request):
     user_exists = User.objects.get(email=user_to_check.username)
 
     if check_password(user_to_check.password, user_exists.password):
-        if user_exists.is_active:
-            request.session['id_user'] = user_exists.id_user
+        if user_exists.active:
+            request.session['id'] = user_exists.id
             request.session['username'] = user_exists.username
-            return {"success": True, "username": user_exists.username}
+            request.session['email'] = user_exists.email
+            return {"success": True, "username": user_exists.username, "email": user_exists.email}
         else:
             error_message = "The account is not active. Check your email!"
             return error_message
@@ -71,6 +73,9 @@ def user_validate(request):
     new_user.email = request.POST.get('email-address')
     new_user.password = request.POST.get('password')
     new_user.confirm_password = request.POST.get('confirm-password')
+    new_user.date = timezone.now().date() 
+
+    
 
     # Váriavel para verificar erros
     error_message = None
@@ -104,7 +109,7 @@ def user_validate(request):
         error_message = 'This e-mail is already registered'
         return None, error_message  
     
-    new_user.is_active = True
+    new_user.active = True
 
     new_user.save()  # Agora new_user só será salvo se não houver erros    
     return new_user, None  # Retornar new_user e None caso não tenha erro
@@ -173,7 +178,7 @@ def user_verify_email(request):
 
         # Se encontar o usuário, define como ativo no banco de dados
         if new_user:
-            new_user.is_active = True
+            new_user.active = True
 
             # Salva as novas alterações
             new_user.save()

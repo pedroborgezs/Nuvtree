@@ -53,7 +53,7 @@ def verify_send(request):
         del request.session['verify_send_access']
         return render(request, 'verify/email.html')
     else:
-        return redirect('/error')
+        return redirect('error')
 
 # Envia a verificação para o e-mail 
 def verify_email(request):

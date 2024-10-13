@@ -10,11 +10,11 @@
 body {
     font-family: monospace;
     font-size: 16px;
-    background-color: #030813;
+    background: url("/static/images/background.jpg") no-repeat center center; /* Adicionado espaço entre 'no-repeat' e 'center center' */
     background-size: cover;
-    backdrop-filter: brightness(10%);
+    backdrop-filter: brightness(5%);
     width: auto;
-    height: 100%;
+    height: 100vh;
 }
 
 input,
@@ -27,4 +27,19 @@ a {
 
 body {
     overflow: hidden;
+}
+
+.content {
+    margin-left: 7%;
+    margin-right: 5%;
+    justify-content: center;
+    align-items: center;
+    /* background-color: yellow; */
+}
+
+.width {
+    /* background-color: orangered; */
+    display: none;
+    width: 1250px;
+    height: 30px;
 }

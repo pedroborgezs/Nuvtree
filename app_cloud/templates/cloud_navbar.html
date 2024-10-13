@@ -1,0 +1,45 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/cloud_global.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/cloud_navbar.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/cloud_content.css' %}">
+    <title>Nuvtree</title>
+</head>
+<body>
+    <div class="container">
+        <div class="navbar">
+            <!-- <img class="nav-logo" src="{% static 'images/nuvtree.png' %}" alt="Nuvtec logo"> -->
+            <a href="/cloud/home/">
+                <img class="navbar-icon" src="{% static 'images/icon-home.png' %}" alt="icon-home">
+            </a>
+            <a href="/cloud/private/">
+                <img class="navbar-icon" src="{% static 'images/icon-folder.png' %}" alt="icon-folder">
+            </a>
+            <a href="/cloud/public/">
+                <img class="navbar-icon" src="{% static 'images/icon-folder-public.png' %}" alt="icon-folder-public">
+            </a>
+
+            <div class="bottom-icons">
+                <a href="#contato">
+                    <img id="small" class="navbar-icon" src="{% static 'images/icon-config.png' %}" alt="icon-home">
+                </a>
+                <a href="#contato"></a>
+                    <img id="small" class="navbar-icon" src="{% static 'images/icon-help.png' %}" alt="icon-home">
+                </a>
+                <a href="#contato"></a>
+                    <img id="small" class="navbar-icon" src="{% static 'images/icon-complaint.png' %}" alt="icon-home">
+                </a>
+                <a href="#contato"></a>
+                    <img id="small" class="navbar-icon" src="{% static 'images/icon-donate.png' %}" alt="icon-home">
+                </a>
+            </div>
+        </div>
+        {% block content %}
+        {% endblock %}
+    </div>
+</body>
+</html>

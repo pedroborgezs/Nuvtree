@@ -17,6 +17,7 @@ import os
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
+print(BASE_DIR)
 
 
 # Quick-start development settings - unsuitable for production
@@ -26,10 +27,10 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-8$tn9zz3^3l6zfy-fp*ugcq_0&o+f57j2i8pgf%o13et)nd$p2'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 # ALLOWED HOSTS
-ALLOWED_HOSTS = ["localhost", "127.0.0.1", "192.168.3.106"]
+ALLOWED_HOSTS = ["localhost", "127.0.0.1", "192.168.56.1"]
 
 # Application definition
 
@@ -43,6 +44,7 @@ INSTALLED_APPS = [
     'app_home',
     'app_cloud',
 ]
+
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
@@ -51,6 +53,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'main.middleware.BlockMobileMiddleware',
 ]
 
 ROOT_URLCONF = 'main.urls'
@@ -119,14 +122,11 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.1/howto/static-files/
 
+# Configurações de arquivos estáticos
 STATIC_URL = '/static/'
-
-# Diretórios adicionais de arquivos estáticos (além das pastas 'static' em apps)
 STATICFILES_DIRS = [
-    BASE_DIR / "static",  # BASE_DIR refere-se ao diretório raiz do projeto
+    BASE_DIR / "static",
 ]
-
-# Diretório onde os arquivos estáticos coletados serão armazenados
 STATIC_ROOT = BASE_DIR / "staticfiles"
 
 # Default primary key field type

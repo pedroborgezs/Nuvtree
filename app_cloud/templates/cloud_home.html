@@ -1,4 +1,4 @@
-{% extends 'cloud_index.html' %}
+{% extends 'cloud_navbar.html' %}
 {% load static %}
 
 {% block content %}
@@ -16,17 +16,32 @@
     
     <div class="content-buttons">
         <div class="buttons">
-            <a href="#home">
-                <img class="icon-menu" src="{% static 'images/icon-home.png' %}" alt="icon-home">
+            <a class="user-settings">
+                <p class="user-settings-title">{{ username }}'s Status</p>
+                <p class="user-settings-desc">Email: {{ email }}</p>
+                <p class="user-settings-desc">Since: {{ date }}</p>
             </a>
-            <a href="#home">
-                <img class="icon-menu" src="{% static 'images/icon-folder.png' %}" alt="icon-home">
+
+            <a class="button-img" href="/cloud/private/">
+                <img class="icon-menu" src="{% static 'images/icon-folder.png' %}" alt="icon-folder">
             </a>
-            <a href="#home">
+
+            <a class="text-content" href="/cloud/private/">
+                <p class="text-content-title">
+                    <span class="text-content-title">Create Private Folder</span>
+                    <span class="text-content-desc"><br>Your own folder, you can allow other people access, they can only collect the folders uploaded there.</span>
+                </p>
+             </a>
+
+             <a class="button-img" href="/cloud/public/">
                 <img class="icon-menu" src="{% static 'images/icon-folder-public.png' %}" alt="icon-home">
             </a>
-            <a href="#home">
-                <img class="icon-menu" src="{% static 'images/icon-config.png' %}" alt="icon-home">
+
+            <a class="text-content" href="/cloud/public/">
+                <p class="text-content-title">
+                    <span class="text-content-title">Create Public Folder</span>
+                    <span class="text-content-desc"><br>You can send and collect files from a public folder on the server, the uploaded files will disappear after a period of X days.</span>
+                </p>
             </a>
         </div> 
     </div>
