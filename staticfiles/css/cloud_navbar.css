@@ -1,0 +1,52 @@
+body {
+    margin: 0;
+}
+
+.navbar {
+    width: 5vh;
+    height: 100vh;
+    position: fixed;
+    left: 0;
+    top: 0;
+    background-color: #000c1c;
+    padding: 0px 10px 0 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.navbar img[class="nav-logo"] {
+    padding-bottom: 30px;
+    width: 60px;
+    height: auto;
+}
+
+.navbar a {
+    display: block;
+    color: white;
+    text-decoration: none;
+    transition: padding-left 0.2s ease;
+}
+
+.navbar-icon {
+    width: 40px;
+    padding: 5px;
+    border-radius: 10px;
+    transition: background-color 0.1s ease-in-out;
+}
+
+.navbar-icon:hover {
+    background-color: #007bff14;
+
+}
+
+#small {
+    width: 25px;
+}
+
+.bottom-icons { /* Adiciona um grupo para os itens do fim */
+    margin-top: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}

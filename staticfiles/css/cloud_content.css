@@ -1,0 +1,130 @@
+p,
+h1 {
+    padding: 0;
+    margin: 0;
+}
+
+.container {
+    /* background-color: #ff009d; */
+    padding: 0;
+    margin: 0;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    margin-left: 10vh;
+}
+
+.text-content-title {
+    color: #007BFF;
+}
+
+.content-header {
+    justify-content: center;
+    /* background-color: aqua; */
+    display: flex;
+    width: 100%;
+}
+
+.header {
+    align-items: center;
+    /* background-color: purple; */
+}
+
+.header h1 {
+    text-align: center;
+    /* background-color: green; */
+    color: #ffffff;
+}
+
+.block {
+    color: white;
+    /* background-color: red; */
+}
+
+.description {
+    font-size: 10px;
+    text-align: justify;
+    color: white;
+}
+
+.buttons {
+    /* background-color: violet; */
+    width: auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 20px;
+}
+
+.buttons a:not(.user-settings):hover {
+    background-color: #007bff14;
+}
+
+
+.content-buttons {
+    width: 100%;
+    padding-top: 50px;
+    display: flex;
+    justify-content: left;
+    /* background-color: pink; */
+}
+
+.button-img {
+    background-color: #000912e0;
+    padding: 20px;
+    margin: 0;
+    text-align: center;
+    border-radius: 50px;
+    text-decoration: none;
+    transition: background-color 0.3s ease-in-out;
+}
+
+.icon-menu {
+    margin: 0;
+    border-radius: 30px;
+    width:  150px;
+}
+
+.text-content {
+    text-decoration: none;
+    background-color: #000912e0;
+    padding: 30px;
+    border-radius: 50px;
+    width: 450px;
+    height: 135px;
+    text-align: justify;
+    display: flex;
+    transition: background-color 0.3s ease-in-out;
+}
+
+.text-content-title {
+    padding: 0;
+    margin: 0;
+    font-size: 25px;
+    color: #007BFF;
+}
+
+.text-content-desc {
+    font-size: 15px;
+    color: #ffffff;
+}
+
+.user-settings {
+    padding: 30px;
+    text-align: center;
+    border-radius: 50px;
+    background-color: #000912e0;
+    grid-row: span 2;
+}
+
+.user-settings-title {
+    padding-bottom: 10px;
+    font-size: 25px;
+    color: #007BFF;
+}
+
+.user-settings-desc {
+    color: white;
+    text-align: left;
+}

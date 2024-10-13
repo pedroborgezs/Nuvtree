@@ -1,0 +1,45 @@
+/* Adicionando fontes */
+@font-face {
+    font-family: 'moderna';
+    src: url("{% static 'fonts/moderna.ttf'%}") format('ttf');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* Configuração da página */
+body {
+    font-family: monospace;
+    font-size: 16px;
+    background: url("/static/images/background.jpg") no-repeat center center; /* Adicionado espaço entre 'no-repeat' e 'center center' */
+    background-size: cover;
+    backdrop-filter: brightness(5%);
+    width: auto;
+    height: 100vh;
+}
+
+input,
+textarea,
+button,
+select,
+a {
+    -webkit-tap-highlight-color: transparent;
+}
+
+body {
+    overflow: hidden;
+}
+
+.content {
+    margin-left: 7%;
+    margin-right: 5%;
+    justify-content: center;
+    align-items: center;
+    /* background-color: yellow; */
+}
+
+.width {
+    /* background-color: orangered; */
+    display: none;
+    width: 1250px;
+    height: 30px;
+}
