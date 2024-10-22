@@ -1,0 +1,97 @@
+{% extends 'global.html' %}
+{% load static %}
+{% block content %}
+<head>
+    <link rel="stylesheet" type="text/css" href="{% static 'app_home/css/index.css' %}">
+</head>
+<style>
+    @font-face {
+        font-family: 'Museo Sans';
+        src: url("{% static 'app_home/fonts/MuseoSans_500.otf'%}") format('opentype');
+        font-weight: normal;
+        font-style: normal;
+    }
+
+    @font-face {
+        font-family: 'Moderna';
+        src: url("{% static 'app_home/fonts/MODERNA_.TTF'%}") format('truetype');
+        font-weight: normal;
+        font-style: normal;
+    }
+
+    body {
+        font-family: 'Museo Sans';
+    }
+
+    .project-title {
+        font-family: 'Moderna';
+    }
+
+    .layout-1 p {
+        font-family: 'Moderna';
+    }
+    
+    .button-upload {
+        font-family: 'Moderna';
+    }
+</style>
+<div class="layout-1">
+    <p>Click this button to start your adventure!</p>
+    <a href="/home/sign-in/" class="button-upload">UPLOAD NOW!</a>
+</div>
+
+<div class="layout-2">
+    <!-- <p class="member-title">DEVELOPER TEAM</p> -->
+    <div class="member-layout">
+        <div class="square-grid">
+            <div class="square">
+                <img class="member-photo">
+                <p class="member-name">Member Name</p>
+                <p class="member-desc">Design Web, Backend Dev, Database Auxiliate</p>
+            </div>
+            <div class="square">
+                <img class="member-photo">
+                <p class="member-name">Member Name</p>
+                <p class="member-desc">Design Web, Backend Dev, Database Auxiliate</p>
+            </div>
+            <div class="square">
+                <img class="member-photo">
+                <p class="member-name">Member Name</p>
+                <p class="member-desc">Design Web, Backend Dev, Database Auxiliate</p>
+            </div>
+            <div class="square">
+                <img class="member-photo">
+                <p class="member-name">Member Name</p>
+                <p class="member-desc">Design Web, Backend Dev, Database Auxiliate</p>
+            </div>
+            <div class="square">
+                <img class="member-photo">
+                <p class="member-name">Member Name</p>
+                <p class="member-desc">Design Web, Backend Dev, Database Auxiliate</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="layout-3">
+    <div class="project-text">
+        <div class="project-title">
+            <p>Cloud Service</p>
+        </div>
+        <div class="project-desc">
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam quam elit, congue at turpis in, semper vulputate nulla. Praesent sed enim ut turpis maximus eleifend. Vestibulum non mauris turpis. Morbi metus ipsum, lacinia in suscipit ut, cursus et sapien. Vivamus quis augue orci. Nullam lobortis, tortor id consectetur auctor, ex ipsum placerat augue, vitae fringilla lorem tortor fermentum tellus. Aenean ac aliquet nisi.</p>
+        </div>
+    </div>
+</div>
+
+<div class="layout-4">
+    <div class="project-tools">
+        <img src="{% static 'app_home/images/python-logo.png' %}" alt="Python">
+        <img src="{% static 'app_home/images/django-logo.png' %}" alt="Django">
+        <img src="{% static 'app_home/images/sqlite-logo.jpeg' %}" alt="Sqlite">
+        <img src="{% static 'app_home/images/javascript-logo.webp' %}" alt="JavaScript">
+        <img src="{% static 'app_home/images/html-logo.png' %}" alt="HTML">
+        <img src="{% static 'app_home/images/css-logo.svg' %}" alt="CSS">
+    </div>
+</div>
+{% endblock %}

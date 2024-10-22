@@ -1,0 +1,27 @@
+{% extends 'global.html' %}
+{% load static %}
+{% block content %}
+<head>
+    <link rel="stylesheet" type="text/css" href="{% static 'app_home/css/auth.css' %}">
+    <script src="{% static 'app_home/js/validate_in.js' %}" defer></script>
+</head>
+<div class="container-wrapper">
+    <div>
+        <img class="icon" src="{% static 'app_home/images/icon-in.png' %}" alt="icon-in">
+        <h2>Welcome Back!</h2>
+        <p class="text-subtitle">Fill all inputs to enter in your account...</p>
+        <form method="POST" onsubmit="return validateForm(event)">
+            {% csrf_token %}
+            <p>Your phone number*</p>
+            <input id="phone-number" type="text" name="phone-number" placeholder="Email" autocomplete="off">
+            <p>Your password*</p>
+            <input id="password" type="password" name="password" placeholder="Password" autocomplete="off">
+            <button type="submit">Enter</button>
+            {% if error_message %}
+            <p class="error-message">{{ error_message }}</p>
+            {% endif %}
+            <a href="/home/sign-up">Don't have an account?</a>
+        </form>
+    </div>
+</div>
+{% endblock %}

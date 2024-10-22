@@ -1,0 +1,16 @@
+{% extends 'global.html' %}
+{% load static %}
+{% block content %}
+<head>
+    <link rel="stylesheet" type="text/css" href="{% static 'app_home/css/auth.css' %}">
+</head>
+<div class="container-wrapper">
+    <div>
+        <img class="icon" src="{% static 'app_home/images/icon-verified.png' %}" alt="icon-verified">
+        <h2>Email has been verified!</h2>
+        <p class="text-subtitle">You can use Nuvtree now!</p>
+        <p style="align-items: center;">Thank you for patience! Now you are ready to enjoy our system. Nuvtree is looking forward to hearing from you!</p>
+        <a class="go-to" href="/sign-in">Go to Sign in</a>
+    </div>
+</div>
+{% endblock %}

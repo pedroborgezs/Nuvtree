@@ -1,0 +1,40 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{% static 'app_home/css/navbar.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'app_home/css/global.css' %}">
+    <script src="{% static 'app_home/js/navbar-bubble-animation.js' %}" defer></script>
+    <title>Nuvtree</title>
+</head>
+<style>
+    @font-face {
+            font-family: 'Moderna';
+            src: url("{% static 'app_home/fonts/MODERNA_.TTF'%}") format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+
+    a {
+        font-family: 'Moderna';
+    }
+</style>
+<body>
+    <header class="header">
+        <nav class="nav">
+            <a href="/" class="nav-logo">
+                <img class="nav-logo" src="{% static 'app_home/images/nuvtree.png' %}" alt="Nuvtec logo">
+            </a>
+            <button class="hamburger"></button>
+            <ul class="nav-list">
+                <li><a href="/home/sign-in/">Sign in</a></li>
+                <li><a href="/home/sign-up/">Sign up</a></li>
+                <li><a href="https://github.com/pedroborgezs/Nuvtree">Github</a></li>
+                <li><a ref="About/">About</a></li>
+            </ul>
+        </nav>
+    </header>
+{% block content %}
+{% endblock %}

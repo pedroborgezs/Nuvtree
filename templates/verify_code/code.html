@@ -1,0 +1,19 @@
+{% extends 'global.html' %}
+{% load static %}
+{% block content %}
+<head>
+    <link rel="stylesheet" type="text/css" href="{% static 'app_home/css/auth.css' %}">
+    <script src="{% static 'app_home/js/validate_in.js' %}" defer></script>
+</head>
+<div class="container-wrapper">
+    <div>
+        <img class="icon" src="{% static 'app_home/images/icon-mail.png' %}" alt="icon-mail">
+        <h2>Verify your WhatsApp!</h2>
+        <p class="text-subtitle">Open your WhatsApp and click the link!</p>
+        <p>Your account has been created successfully, now we just need a verification sent to your WhatsApp, 
+        click on the link to verify your number and access our application, you have 10 MINUTES to verify, 
+        if you do not verify your account will be removed.</p>
+        <a class="go-to" href="/sign-in">Go to Sign in</a>
+    </div>
+</div>
+{% endblock %}

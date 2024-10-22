@@ -1,0 +1,18 @@
+{% extends 'global.html' %}
+{% load static %}
+{% block content %}
+<head>
+    <link rel="stylesheet" type="text/css" href="{% static 'app_home/css/auth.css' %}">
+    <script src="{% static 'app_home/js/validate_in.js' %}" defer></script>
+</head>
+<div class="container-wrapper">
+    <div>
+        <img class="icon" src="{% static 'app_home/images/icon-error.png' %}" alt="icon-mail">
+        <h2>Form error!</h2>
+        <p class="text-subtitle">You won't find anything here...</p>
+        <p>We understand your desire to explore, but you won't find anything 
+        exploring the pages without following the correct steps, come back!</p>
+        <a class="go-to" href="/">Back to menu</a>
+    </div>
+</div>
+{% endblock %}

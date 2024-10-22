@@ -1,0 +1,25 @@
+/* Configuração da página */
+/* body {
+    font-family: monospace;
+    font-size: 16px;
+    background: url("/static/images/background.jpg") no-repeat center center; 
+    background-size: cover;
+    backdrop-filter: brightness(5%);
+    width: auto;
+    height: 100vh;
+} */
+
+body {
+    font-size: 16px;
+    background-color: #fff;
+    width: auto;
+    height: 100vh;
+}
+
+input,
+textarea,
+button,
+select,
+a {
+    -webkit-tap-highlight-color: transparent;
+}
